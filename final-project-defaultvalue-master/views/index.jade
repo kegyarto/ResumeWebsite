@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  h1=title
+  h2= user
+  p=description
+  p=skills
+  p=image
+  img.className#IdName(src="/images/upload/"+image alt="Image Title")
+
+
+  form(role='form', action='/greet/update/', method='post')
+    label='update name'
+    input(type="text",name="name",class="form-control")
+    button.btn.btn-primary(type='submit') name
+
+  form(role='form', action='/greet/update/', method='post')
+    label='update title'
+    input(type="text",name="title",class="form-control")
+    button.btn.btn-primary(type='submit') title
+
+  form(role='form', action='/greet/update/', method='post')
+    label='update description'
+    input(type="text",name="description",class="form-control")
+    button.btn.btn-primary(type='submit') description
+
+
+  form(role='form', action='/greet/update/', method='post')
+    label='update skills'
+    input(type="text",name="skills",class="form-control")
+    button.btn.btn-primary(type='submit') skills
+    
+
+  form(action='/greet/profileimage', method='post', enctype="multipart/form-data")
+    label='update image'
+    input(type="file",name="image",class="form-control")
+    button.btn.btn-primary(type='submit') image
+    
+  
+  form(role='form', action='/logout', method='post')
+    button.btn.btn-primary(type='submit' style="background-color:red") logout
+
+  <br>
+  a(href="/resume") resume
+  <br>
+  a(href="/projects") projects
+
+
+  
+  
